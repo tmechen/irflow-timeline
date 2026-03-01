@@ -11,6 +11,8 @@ The Lateral Movement Tracker visualizes network logon activity across your envir
 
 ## Detection Rules
 
+![Lateral Movement Tracker detection rules configuration showing 13 built-in rules across RDP, Security, Privilege, and Session categories](/dfir-tips/Lateral-Movement-Detection-Rules.png)
+
 The tracker uses a configurable rules system with 13 built-in detection rules across four categories. Each rule can be individually toggled on or off.
 
 ### RDP Session Rules
@@ -174,6 +176,8 @@ The interactive force-directed visualization described above.
 
 ### 2. Findings
 
+![Lateral Movement Tracker Findings tab showing MITRE ATT&CK-mapped attack pattern detections with severity badges](/dfir-tips/Lateral-Movement-Findings.png)
+
 The Findings tab displays automated attack pattern detections with MITRE ATT&CK mapping. Each finding is a card showing severity, MITRE technique badge (clickable — links to attack.mitre.org), title, description, source/target hosts, time range, and event count.
 
 **Attack pattern detections:**
@@ -226,6 +230,8 @@ Host A → Host B → Host C → Host D
 The chain detection algorithm uses depth-first search to trace connected logon sequences, identifying potential attacker movement paths through the network. Each chain shows first seen and last seen timestamps per connection.
 
 ### 4. RDP Sessions
+
+![Lateral Movement Tracker RDP Sessions tab showing session correlation with status, source, target, user, and duration columns](/dfir-tips/Lateral-Movement-RDP-Sessions.png)
 
 A complete RDP session correlation view that reconstructs the full lifecycle of each RDP session by linking related events across multiple log sources. Two view modes are available via a toggle in the tab header:
 
@@ -286,6 +292,8 @@ The engine processes all RDP-related events chronologically, linking them into s
 - **Copy** — exports selected or all sessions as tab-separated text
 
 ### 5. Connections
+
+![Lateral Movement Tracker Connections tab showing tabular view of all source-target-user-logon type pairs with event counts](/dfir-tips/Lateral-Movement-Connections.png)
 
 A tabular view of all connections with full details:
 
