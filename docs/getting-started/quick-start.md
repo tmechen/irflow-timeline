@@ -75,7 +75,7 @@ Toggle `Cmd+B` to show only bookmarked rows.
 
 ## View the Histogram
 
-Click **Tools > Histogram** to open the timeline visualization:
+Click the **histogram toggle** button in the toolbar to open the timeline visualization:
 
 - See event distribution across days, hours, or minutes
 - Click and drag to brush-select a time range — the grid filters automatically

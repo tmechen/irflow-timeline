@@ -16,8 +16,8 @@ Bookmarks let you flag individual rows as important for later review and reporti
 
 ### Bulk Bookmarking
 
-- Apply current filters, then use **Edit > Bookmark All Filtered** to bookmark every visible row
-- Use **Edit > Unbookmark All Filtered** to remove bookmarks from filtered results
+- Open **Actions > Bulk Tag / Bookmark** to bookmark or tag rows by time range
+- Or `Cmd+Click` a row and use the bookmark option in the context menu
 
 ### Viewing Bookmarks
 
@@ -61,22 +61,17 @@ You can also create custom tags — just type any name. IOC Matching automatical
 
 **By Time Range:**
 
-1. Open **Tools > Bulk Tag**
+1. Open **Actions > Bulk Tag / Bookmark**
 2. Select a start and end timestamp
 3. Choose or type a tag name
 4. All rows in the time range receive the tag
 
 This is useful for marking an entire activity window (e.g., "Attacker Active 14:30-15:45").
 
-**By Filter:**
-
-Apply any combination of filters, then use **Edit > Tag All Filtered** to tag every visible row.
-
 ### Removing Tags
 
 - `Cmd+Click` a tagged row and select **Remove Tag**
 - Choose which tag to remove (if multiple)
-- Use **Edit > Remove Tag from All Filtered** for bulk removal
 
 ### Tag Colors
 

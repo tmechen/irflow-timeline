@@ -50,7 +50,7 @@ Tags categorize your findings by attack phase or significance. Review them for c
 
 1. In each tab, open the **tag filter dropdown** to see all tags in use
 2. Ensure consistent naming -- if one tab uses `lateral-movement` and another uses `Lateral Movement`, standardize before merging
-3. Use **Edit > Tag All Filtered** to bulk-apply missing tags where appropriate
+3. Use **Actions > Bulk Tag / Bookmark** to bulk-apply missing tags where appropriate
 4. Verify that critical events carry the right tags:
 
 | Tag | Expected Content |
@@ -66,7 +66,7 @@ Tags categorize your findings by attack phase or significance. Review them for c
 
 A single merged timeline provides the chronological backbone of your report.
 
-1. Open **Tools > Merge Tabs**
+1. Open **View > Merge Tabs**
 2. Select all tabs that contain bookmarked or tagged events relevant to the incident
 3. A new merged tab is created with a `_Source` column identifying the origin of each row
 4. Sort the merged tab by timestamp ascending
@@ -105,7 +105,7 @@ Use the histogram's brush selection to highlight just the active attack window. 
 
 Stacking produces the data you need for the "Indicators of Compromise" and "Affected Systems" sections.
 
-1. On the merged tab (filtered to bookmarked/tagged rows), open **Tools > Stacking**
+1. On the merged tab (filtered to bookmarked/tagged rows), open **Tools > Stack Values**
 2. Stack on key columns and record the results:
 
 | Stack Column | Report Section | What to Record |
@@ -132,7 +132,7 @@ Produce the raw data exports that support your report narrative.
 
 The HTML report is a self-contained deliverable that combines summary statistics, tagged event tables, and bookmarked rows.
 
-1. Go to **File > Generate Report**
+1. Go to **Tools > Generate Report**
 2. Choose a save location (use a descriptive name like `incident-2026-0042-report.html`)
 3. The report opens in your browser and includes:
    - Summary cards with row counts, bookmark counts, and tag counts

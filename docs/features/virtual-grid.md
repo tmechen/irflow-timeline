@@ -4,6 +4,80 @@ The data grid is the primary interface for viewing and interacting with timeline
 
 ![Virtual Grid displaying EvtxECmd timeline data with sortable columns, row detail panel, and histogram](/dfir-tips/Virtual-Grid.png)
 
+## Menu Bar
+
+The menu bar provides access to all application features through five dropdown menus with glassmorphism styling.
+
+### File
+
+| Item | Shortcut | Description |
+|------|----------|-------------|
+| **Open** | `⌘O` | Open a file via the system dialog |
+| **Export** | `⌘E` | Export filtered data as CSV, TSV, XLSX, or XLS |
+| **Save Session** | `⌘S` | Save all tabs, filters, bookmarks, tags, and color rules to a `.tle` file |
+| **Load Session** | `⇧⌘O` | Restore a previously saved session |
+| **Open Recent** | | Submenu showing the last 10 opened files with full paths |
+| **Close Tab** | `⌘W` | Close the active tab |
+| **Close All Tabs** | | Close every open tab |
+| **Exit** | | Quit the application |
+
+### View
+
+| Item | Description |
+|------|-------------|
+| **Columns** | Open the Column Manager to show, hide, and reorder columns |
+| **Color Rules** | Create and manage conditional formatting rules |
+| **Tags** | View and manage all tags across the active tab |
+| **Filter Presets** | Save and load named filter configurations |
+| **Edit Filter** | Open the advanced filter editor for the active tab |
+| **Merge Tabs** | Combine multiple tabs into a unified super-timeline |
+
+### Actions
+
+| Item | Description |
+|------|-------------|
+| **Show Flagged Only** | Toggle between all rows and bookmarked-only view |
+| **Select All** | Select all rows (checkbox) |
+| **Deselect All** | Clear checkbox selection |
+| **Invert Selection** | Toggle the selection state of every row |
+| **Copy Selected Rows** | Copy selected rows as tab-separated text to clipboard |
+| **Export Selected Rows** | Export selected rows as CSV via save dialog |
+| **IOC Matching** | Scan timeline data for Indicators of Compromise |
+| **Bulk Tag / Bookmark** | Apply tags or bookmarks to rows by time range |
+| **Pivot ±N Minutes** | Filter to a time window around the selected row |
+| **Find Duplicates** | Identify repeated values in any column |
+
+### Tools
+
+| Item | Description |
+|------|-------------|
+| **Stack Values** | Frequency analysis of unique values in any column |
+| **Gap Analysis** | Detect periods of unusual inactivity in the timeline |
+| **Log Sources** | Gantt-style heatmap of log source coverage across time |
+| **Burst Detection** | Identify abnormal spikes in event volume |
+| **Process Inspector** | Parent-child process hierarchy with MITRE ATT&CK detection |
+| **Lateral Movement Tracker** | Network graph of host-to-host logon activity with attack pattern detection |
+| **Persistence Analyzer** | Automated detection of 30+ persistence techniques with risk scoring |
+| **Generate Report** | Create an HTML investigation report from bookmarks and tags |
+
+### Help
+
+| Item | Shortcut | Description |
+|------|----------|-------------|
+| **Quick Help** | | In-app guide covering supported formats, search modes, and shortcuts |
+| **Keyboard Shortcuts** | `⌘/` | Reference card of all keyboard shortcuts |
+| **Website** | | Open the IRFlow Timeline documentation site |
+| **About IRFlow Timeline** | | Version info, author, and social links |
+
+### Toolbar Controls
+
+In addition to the menu bar, the toolbar contains:
+
+- **Date/time format** selector and **timezone** selector
+- **Theme toggle** (dark/light)
+- **Font size** controls (decrease/increase)
+- **Histogram toggle** — show or hide the timeline histogram visualization
+
 ## How It Works
 
 Rather than loading all rows into memory, the grid maintains a sliding window of 10,000 rows centered on your scroll position. As you scroll, new rows are fetched from SQLite using `LIMIT`/`OFFSET` queries with a 2,000-row prefetch threshold. This means:

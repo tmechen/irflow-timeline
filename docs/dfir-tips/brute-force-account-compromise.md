@@ -60,7 +60,7 @@ If your timeline contains mixed artifacts (registry, file system, event logs), u
 
 With authentication events filtered, run Burst Analysis to detect spikes.
 
-1. Open **Tools > Burst Analysis**
+1. Open **Tools > Burst Detection**
 2. Set **Window size** to **1 minute**
 3. Set **Burst factor** to **5x**
 4. Review the results sorted by burst ratio
@@ -89,7 +89,7 @@ Use the histogram's **brush selection** to click and drag over the attack window
 
 With the attack time window selected via the histogram brush:
 
-1. Open **Tools > Stacking**
+1. Open **Tools > Stack Values**
 2. Stack on the `TargetUserName` column
 3. Sort by **Count (descending)**
 

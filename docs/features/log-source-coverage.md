@@ -6,7 +6,7 @@ Log Source Coverage provides a Gantt-style visualization of which log sources ar
 
 ## Opening Log Source Coverage
 
-- **Menu:** Tools > Log Source Coverage
+- **Menu:** Tools > Log Sources
 
 ## Configuration
 

@@ -89,7 +89,7 @@ Burst analysis identifies abnormal spikes in event volume that stand out from th
 
 ### How to Use
 
-1. Open **Tools > Burst Analysis**
+1. Open **Tools > Burst Detection**
 2. Select the **timestamp column** to analyze
 3. Configure the detection parameters:
 

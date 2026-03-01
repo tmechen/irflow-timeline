@@ -63,7 +63,7 @@ Generate a formatted investigation report from your bookmarks and tags.
 
 ### Generate a Report
 
-1. **Menu:** File > Generate Report
+1. **Menu:** Tools > Generate Report
 2. Choose a save location
 3. The HTML report opens in your default browser
 

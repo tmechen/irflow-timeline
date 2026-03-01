@@ -44,7 +44,7 @@ Before diving into the workflow, familiarize yourself with the Windows Event IDs
 
 Start every anti-forensics investigation by understanding what data you actually have -- and what might be missing.
 
-1. Open **Tools > Log Source Coverage**
+1. Open **Tools > Log Sources**
 2. Examine the heatmap for each log source across the timeline span
 3. Look for the following patterns:
 

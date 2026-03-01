@@ -93,7 +93,7 @@ If you have KAPE output from several systems, load each host into its own set of
 
 ### 4. Run Log Source Coverage
 
-Open **Tools > Log Source Coverage** on your EvtxECmd tab. The heatmap reveals which event log channels are present and where gaps exist.
+Open **Tools > Log Sources** on your EvtxECmd tab. The heatmap reveals which event log channels are present and where gaps exist.
 
 ### 5. Check for expected log sources
 
@@ -122,7 +122,7 @@ A sudden drop in all log sources at a specific time often indicates a system reb
 
 ### 7. Stack event logs by Event ID
 
-On the EvtxECmd tab, open **Tools > Stacking** and stack the **EventId** column. Review the distribution for these key event IDs:
+On the EvtxECmd tab, open **Tools > Stack Values** and stack the **EventId** column. Review the distribution for these key event IDs:
 
 | Event ID | Source | Significance |
 |----------|--------|-------------|
@@ -197,7 +197,7 @@ Review the three sub-tabs:
 
 ### 14. Run IOC matching
 
-If you have indicators from threat intelligence, open **Tools > IOC Match** and paste your IOC list. IRFlow Timeline scans all columns across all loaded data for matches.
+If you have indicators from threat intelligence, open **Actions > IOC Matching** and paste your IOC list. IRFlow Timeline scans all columns across all loaded data for matches.
 
 | IOC Type | Where to Expect Matches |
 |----------|------------------------|
