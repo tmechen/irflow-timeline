@@ -5,7 +5,7 @@ Ransomware incidents demand a structured approach to timeline analysis. The atta
 ::: info Features Used
 - [KAPE Integration](/workflows/kape-integration) -- ingest triage images with auto-detected profiles
 - [Histogram](/features/histogram) -- visualize activity bursts across the incident window
-- [Process Tree](/features/process-tree) -- trace execution chains from initial payload to ransomware binary
+- [Process Inspector](/features/process-tree) -- trace execution chains from initial payload to ransomware binary
 - [Log Source Coverage](/features/log-source-coverage) -- identify evidence gaps across endpoints
 - [Bookmarks and Tags](/features/bookmarks-tags) -- tag artifacts by kill chain phase
 - [Merge Tabs](/workflows/merge-tabs) -- combine host timelines into a unified view
@@ -81,7 +81,7 @@ Use the [Histogram](/features/histogram) at hour granularity to find the burst o
 
 ### 4. Trace the Execution Chain
 
-Open the [Process Tree](/features/process-tree) to visualize the execution flow from the initial payload. Suspicious patterns to look for:
+Open the [Process Inspector](/features/process-tree) to visualize the execution flow from the initial payload. Suspicious patterns to look for:
 
 - **Office to shell**: `WINWORD.EXE` -> `cmd.exe` -> `powershell.exe`
 - **Script interpreter chains**: `wscript.exe` -> `powershell.exe` -> `IEX(New-Object Net.WebClient).DownloadString(...)`
@@ -135,7 +135,7 @@ Tag escalation evidence with `priv-esc`.
 
 ### 7. Track Lateral Movement
 
-Filter for lateral movement indicators using the [Lateral Movement](/features/lateral-movement) view. Cross-reference source and destination hosts:
+Filter for lateral movement indicators using the [Lateral Movement Tracker](/features/lateral-movement). Cross-reference source and destination hosts:
 
 | Technique | Artifacts |
 |-----------|-----------|

@@ -5,7 +5,7 @@ Lateral movement is one of the most critical phases to reconstruct during an inc
 ::: info Features Used
 - [Lateral Movement Tracker](/features/lateral-movement) -- visualize host-to-host logon connections as a network graph
 - [Stacking](/features/stacking) -- frequency analysis to surface unusual logon patterns
-- [Process Tree](/features/process-tree) -- trace execution chains spawned after lateral movement
+- [Process Inspector](/features/process-tree) -- trace execution chains spawned after lateral movement
 - [Bookmarks and Tags](/features/bookmarks-tags) -- bulk-tag events across the lateral movement chain
 - [Color Rules](/features/color-rules) -- highlight logon types and suspicious accounts at a glance
 - [Search and Filtering](/features/search-filtering) -- isolate specific hosts, accounts, and time windows
@@ -94,7 +94,7 @@ Sort stacking results in ascending order to surface values that appear only once
 
 ### 4. Open the Lateral Movement Tracker
 
-Navigate to **Tools > Lateral Movement** to open the [Lateral Movement Tracker](/features/lateral-movement). The tracker automatically parses your logon events and builds an interactive network graph.
+Navigate to **Tools > Lateral Movement Tracker** to open the [Lateral Movement Tracker](/features/lateral-movement). The tracker automatically parses your logon events and builds an interactive network graph.
 
 ![Lateral Movement Tracker network graph showing host-to-host logon connections with RDP, Network, and Interactive connection types](/dfir-tips/lateral-movement-tracker.png)
 
@@ -160,14 +160,14 @@ Once you have identified suspicious host-to-host connections, filter the main gr
 - Event ID 5140 (network share accessed) on the destination
 - No corresponding service installation or process creation
 
-### 7. Examine Post-Logon Execution with Process Tree
+### 7. Examine Post-Logon Execution with Process Inspector
 
-For each destination host where lateral movement was confirmed, open the [Process Tree](/features/process-tree) and filter to the relevant time window. Focus on:
+For each destination host where lateral movement was confirmed, open the [Process Inspector](/features/process-tree) and filter to the relevant time window. Focus on:
 
 - Processes spawned by `PSEXESVC.EXE` -- these are the commands the attacker ran via PsExec
 - Child processes of `WmiPrvSE.exe` -- commands executed via WMI
 - Processes launched within the RDP session (typically under `explorer.exe` for the logged-on user)
-- Any LOLBin execution (highlighted in orange by the Process Tree) shortly after the lateral logon event
+- Any LOLBin execution (highlighted in orange by the Process Inspector) shortly after the lateral logon event
 
 This reveals what the attacker did after arriving on each host -- credential dumping, reconnaissance, staging tools, or accessing sensitive data.
 

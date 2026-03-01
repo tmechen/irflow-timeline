@@ -255,14 +255,14 @@ export default function IRFlowHeroGraphic() {
         {/* Right side panels */}
         <div style={{ width: 340, display: "flex", flexDirection: "column" }}>
           
-          {/* Process Tree */}
+          {/* Process Inspector */}
           <div style={{
             flex: 1, padding: 16, borderBottom: `1px solid #222`,
             opacity: showTree ? 1 : 0, transform: showTree ? "translateY(0)" : "translateY(10px)",
             transition: "all 0.5s ease",
           }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-              <span style={{ fontSize: 10, color: TEXT_DIM, letterSpacing: 1.2, fontWeight: 600 }}>PROCESS TREE</span>
+              <span style={{ fontSize: 10, color: TEXT_DIM, letterSpacing: 1.2, fontWeight: 600 }}>PROCESS INSPECTOR</span>
               <span style={{ fontSize: 9, color: ORANGE, background: `${ORANGE}15`, padding: "2px 8px", borderRadius: 3 }}>SYSMON EID 1</span>
             </div>
             {PROCESS_TREE.map((proc, i) => (

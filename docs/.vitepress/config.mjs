@@ -50,8 +50,8 @@ export default defineConfig({
           text: 'Analytics',
           items: [
             { text: 'Histogram', link: '/features/histogram' },
-            { text: 'Process Tree', link: '/features/process-tree' },
-            { text: 'Lateral Movement', link: '/features/lateral-movement' },
+            { text: 'Process Inspector', link: '/features/process-tree' },
+            { text: 'Lateral Movement Tracker', link: '/features/lateral-movement' },
             { text: 'Persistence Analyzer', link: '/features/persistence-analyzer' },
             { text: 'Gap & Burst Analysis', link: '/features/gap-burst-analysis' },
             { text: 'IOC Matching', link: '/features/ioc-matching' },

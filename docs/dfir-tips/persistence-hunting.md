@@ -5,7 +5,7 @@ Persistence is one of the most critical phases of an intrusion to identify. Adve
 ::: info Features Used
 - [Persistence Analyzer](/features/persistence-analyzer) -- automated detection of 30+ persistence techniques with risk scoring
 - [Search (Regex)](/features/search-filtering) -- pattern matching across parsed artifacts
-- [Process Tree](/features/process-tree) -- trace parent-child relationships for persistence installers
+- [Process Inspector](/features/process-tree) -- trace parent-child relationships for persistence installers
 - [Color Rules](/features/color-rules) -- highlight known persistence paths automatically
 - [Virtual Grid](/features/virtual-grid) -- sort and filter large artifact sets
 - [Cross-Tab Search](/workflows/multi-tab) -- correlate registry changes with process execution
@@ -108,9 +108,9 @@ Suspicious indicators in service entries include:
 | `cmd.exe /c` wrapper | `cmd.exe /c C:\Temp\payload.bat` |
 | `svchost.exe -k` with unknown group | Custom ServiceDll in Parameters subkey |
 
-### 6. Trace Service Creation with Process Tree
+### 6. Trace Service Creation with Process Inspector
 
-When you identify a suspicious service, use the [Process Tree](/features/process-tree) to determine what process created it. Switch to a tab containing process execution data (Sysmon, Windows Security, or MFT timeline) and search for the service name.
+When you identify a suspicious service, use the [Process Inspector](/features/process-tree) to determine what process created it. Switch to a tab containing process execution data (Sysmon, Windows Security, or MFT timeline) and search for the service name.
 
 Look for `services.exe` spawning unknown child processes, or `sc.exe` and `reg.exe` being invoked by unexpected parents such as `cmd.exe` launched from `winword.exe` or `outlook.exe`.
 
@@ -191,7 +191,7 @@ Binding:    Links the filter to the consumer
 
 Use [Cross-Tab Search](/workflows/multi-tab) to pivot from a WMI subscription event in the event log tab to the corresponding process execution in a Sysmon or process tracking tab. Search for the binary referenced in the consumer's command line template across all open tabs.
 
-In the Process Tree, look for `WmiPrvSE.exe` spawning unexpected child processes -- this is the telltale sign of a WMI consumer executing its payload.
+In the Process Inspector, look for `WmiPrvSE.exe` spawning unexpected child processes -- this is the telltale sign of a WMI consumer executing its payload.
 
 ## DLL Search Order Hijacking and Startup Folder
 
@@ -203,7 +203,7 @@ DLL search order hijacking involves placing a malicious DLL in a directory searc
 (\.dll).*(AppData|ProgramData|Users\\Public|Temp)
 ```
 
-Cross-reference any DLL load events (Sysmon Event ID 7) in non-standard directories with the [Process Tree](/features/process-tree) to see which process loaded the DLL and what it subsequently executed.
+Cross-reference any DLL load events (Sysmon Event ID 7) in non-standard directories with the [Process Inspector](/features/process-tree) to see which process loaded the DLL and what it subsequently executed.
 
 ### 12. Review Startup Folder Items
 

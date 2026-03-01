@@ -84,10 +84,10 @@
 
       <!-- Right side panels -->
       <div class="side-panels">
-        <!-- Process Tree -->
+        <!-- Process Inspector -->
         <div class="panel process-tree" :style="{ opacity: showTree ? 1 : 0, transform: showTree ? 'translateY(0)' : 'translateY(10px)' }">
           <div class="panel-header">
-            <span class="panel-title">PROCESS TREE</span>
+            <span class="panel-title">PROCESS INSPECTOR</span>
             <span class="panel-badge badge-orange">SYSMON EID 1</span>
           </div>
           <div v-for="(proc, i) in processTree" :key="i" class="tree-node" :style="{ paddingLeft: `${proc.depth * 18}px`, opacity: showTree ? 1 : 0, transitionDelay: `${i * 80}ms` }">

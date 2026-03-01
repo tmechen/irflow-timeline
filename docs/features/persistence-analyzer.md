@@ -279,8 +279,8 @@ Findings with the red SUSPICIOUS badge deserve immediate attention. GUID-named t
 In ransomware investigations, check the RMM-tagged findings first. Threat actors commonly deploy AnyDesk, ScreenConnect, or Splashtop for persistent remote access before deploying ransomware.
 :::
 
-::: tip Combine with Process Tree
-After identifying a suspicious persistence mechanism, use the [Process Tree](/features/process-tree) to trace what process installed it and what the persisted binary spawns on execution.
+::: tip Combine with Process Inspector
+After identifying a suspicious persistence mechanism, use the [Process Inspector](/features/process-tree) to trace what process installed it and what the persisted binary spawns on execution.
 :::
 
 ::: tip Correlate with Lateral Movement

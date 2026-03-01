@@ -18,7 +18,7 @@ Responsibilities:
 - Grid rendering with virtual scrolling
 - User interaction handling
 - State management (React hooks)
-- Visualization rendering (histogram, process tree, lateral movement graphs)
+- Visualization rendering (histogram, process inspector, lateral movement graphs)
 - Theme management (dark/light)
 
 ### Preload Bridge

@@ -6,7 +6,7 @@ The Lateral Movement Tracker visualizes network logon activity across your envir
 
 ## Opening the Tracker
 
-- **Menu:** Tools > Lateral Movement
+- **Menu:** Tools > Lateral Movement Tracker
 - Supports 16 event IDs across Windows Security, TerminalServices, and RDP logs
 
 ## Detection Rules

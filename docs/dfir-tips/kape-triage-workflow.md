@@ -5,8 +5,8 @@ A structured approach to triaging KAPE collection output in IRFlow Timeline, bro
 ::: info Features Used
 - [Virtual Grid](/features/virtual-grid) -- loading and navigating KAPE output
 - [Stacking](/features/stacking) -- frequency analysis for anomaly detection
-- [Process Tree](/features/process-tree) -- visualizing execution chains
-- [Lateral Movement](/features/lateral-movement) -- mapping network logon activity
+- [Process Inspector](/features/process-tree) -- visualizing execution chains
+- [Lateral Movement Tracker](/features/lateral-movement) -- mapping network logon activity
 - [IOC Matching](/features/ioc-matching) -- scanning for known indicators
 - [Search and Filtering](/features/search-filtering) -- narrowing results
 - [Bookmarks and Tags](/features/bookmarks-tags) -- marking findings
@@ -159,15 +159,15 @@ If you already set a date range filter in Step 2, stacking results only reflect 
 
 ---
 
-## Minutes 15-20: Process Tree Analysis
+## Minutes 15-20: Process Inspector Analysis
 
-### 10. Build the Process Tree
+### 10. Build the Process Inspector
 
-On the EvtxECmd tab, filter to Sysmon Event ID 1 or Security Event ID 4688, then open **Tools > Process Tree**. IRFlow Timeline builds the parent-child hierarchy automatically.
+On the EvtxECmd tab, filter to Sysmon Event ID 1 or Security Event ID 4688, then open **Tools > Process Inspector**. IRFlow Timeline builds the parent-child hierarchy automatically.
 
 ### 11. Review suspicious pattern highlights
 
-The [Process Tree](/features/process-tree) flags three categories of suspicious activity:
+The [Process Inspector](/features/process-tree) flags three categories of suspicious activity:
 
 | Color | Pattern | Example |
 |-------|---------|---------|
@@ -187,7 +187,7 @@ For each suspicious chain, click the filter icon on the process node to jump bac
 
 ### 13. Map lateral movement
 
-Switch to the EvtxECmd tab (ensure logon events are present) and open **Tools > Lateral Movement**. The tracker builds a force-directed graph of network logon activity.
+Switch to the EvtxECmd tab (ensure logon events are present) and open **Tools > Lateral Movement Tracker**. The tracker builds a force-directed graph of network logon activity.
 
 Review the three sub-tabs:
 

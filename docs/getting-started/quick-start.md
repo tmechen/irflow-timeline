@@ -85,6 +85,6 @@ Click **Tools > Histogram** to open the timeline visualization:
 
 - Learn about all [search modes and filters](/features/search-filtering)
 - Set up [color rules](/features/color-rules) for visual pattern matching
-- Explore the [Process Tree](/features/process-tree) for Sysmon analysis
-- Track [Lateral Movement](/features/lateral-movement) across your network
+- Explore the [Process Inspector](/features/process-tree) for Sysmon analysis
+- Track lateral movement with the [Lateral Movement Tracker](/features/lateral-movement)
 - Configure [KAPE integration](/workflows/kape-integration) for auto-detection

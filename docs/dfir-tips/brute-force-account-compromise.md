@@ -143,7 +143,7 @@ Once you have identified the successful logon, the investigation shifts to post-
    - Service installations (Event ID 7045)
    - Scheduled task creation (Event ID 4698)
 
-Use the [Lateral Movement Map](/features/lateral-movement) to visualize whether the compromised credentials were used to pivot to other systems.
+Use the [Lateral Movement Tracker](/features/lateral-movement) to visualize whether the compromised credentials were used to pivot to other systems.
 
 ### 8. Check for NTLM Authentication (Event ID 4776)
 

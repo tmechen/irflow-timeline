@@ -22,7 +22,7 @@
   - File menu: Open, Export, Save/Load Session, Open Recent (with submenu), Close Tab
   - View menu: Columns, Color Rules, Tags, Filter Presets, Edit Filter, Merge Tabs
   - Actions menu: Select All/Deselect All/Invert Selection, Copy/Export Selected Rows, IOC Matching, Bulk Tag, Pivot, Find Duplicates
-  - Tools menu: Stack Values, Gap Analysis, Log Sources, Burst Detection, Lateral Movement, Process Inspector, Persistence Analyzer, Generate Report
+  - Tools menu: Stack Values, Gap Analysis, Log Sources, Burst Detection, Lateral Movement Tracker, Process Inspector, Persistence Analyzer, Generate Report
   - Help menu: Quick Help, Keyboard Shortcuts, Website, About
   - Glassmorphism styling with backdrop blur and semi-transparent backgrounds
 

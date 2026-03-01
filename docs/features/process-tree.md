@@ -1,19 +1,19 @@
-# Process Tree
+# Process Inspector
 
-The Process Tree visualizes parent-child process relationships from Sysmon Event ID 1 and Windows Security Event ID 4688 (Process Create) logs, providing a hierarchical view of execution chains with automatic suspicious pattern detection and detailed process analysis.
+The Process Inspector visualizes parent-child process relationships from Sysmon Event ID 1 and Windows Security Event ID 4688 (Process Create) logs, providing a hierarchical view of execution chains with automatic suspicious pattern detection and detailed process analysis.
 
-![Process Tree showing GUID-linked parent-child process hierarchy with cmd.exe and powershell.exe execution chains](/dfir-tips/Process-Tree-Analyzer-Sysmon.png)
+![Process Inspector showing GUID-linked parent-child process hierarchy with cmd.exe and powershell.exe execution chains](/dfir-tips/Process-Tree-Analyzer-Sysmon.png)
 
-## Opening the Process Tree
+## Opening the Process Inspector
 
-- **Menu:** Tools > Process Tree
+- **Menu:** Tools > Process Inspector
 - Supports Sysmon Event ID 1 and Windows Security Event ID 4688 (from EVTX or CSV export)
 - Default filter: `1,4688` — both event IDs are queried automatically
 - Configurable max processes limit (default: 200,000)
 
 ## How It Works
 
-The Process Tree builds a hierarchy by linking processes through their parent-child relationships:
+The Process Inspector builds a hierarchy by linking processes through their parent-child relationships:
 
 1. **GUID-preferred linking** — uses `ProcessGuid` and `ParentProcessGuid` when available, which correctly handles PID reuse (a common forensic challenge). A green "GUID-linked" badge appears in the header when GUIDs are used
 2. **PID-based re-linking** — when GUIDs are not available, builds a `pid → [nodes]` lookup and re-links parent-child relationships by matching PPIDs to PIDs. For each child, selects the best parent: the latest process with a matching PID whose timestamp is before the child's creation time
@@ -46,7 +46,7 @@ IRFlow Timeline automatically identifies the relevant columns from your data:
 
 ### EvtxECmd Support
 
-When working with EvtxECmd CSV output, the Process Tree extracts real PID and GUID values from `PayloadData1` and `PayloadData5` fields. Hex PID values (e.g., `0x1a2c`) are automatically converted to decimal. This is important because EvtxECmd records the logging service PID by default — the tree uses the extracted values for accurate hierarchy building.
+When working with EvtxECmd CSV output, the Process Inspector extracts real PID and GUID values from `PayloadData1` and `PayloadData5` fields. Hex PID values (e.g., `0x1a2c`) are automatically converted to decimal. This is important because EvtxECmd records the logging service PID by default — the tree uses the extracted values for accurate hierarchy building.
 
 ## Table Columns
 
@@ -97,7 +97,7 @@ Token elevation types are also decoded: `%%1936` = Full (elevated), `%%1937` = L
 
 ## Suspicious Pattern Detection
 
-The Process Tree uses a library of 342 parent-child chain rules mapped to MITRE ATT&CK techniques (`src/detection-rules.js`), plus 13 standalone regex patterns for command-line and path analysis. Chain rules are pre-indexed in a Map for O(1) lookup by `parent:child` pair. Each detection returns a human-readable reason string with ATT&CK technique ID displayed as a badge on the process node.
+The Process Inspector uses a library of 342 parent-child chain rules mapped to MITRE ATT&CK techniques (`src/detection-rules.js`), plus 13 standalone regex patterns for command-line and path analysis. Chain rules are pre-indexed in a Map for O(1) lookup by `parent:child` pair. Each detection returns a human-readable reason string with ATT&CK technique ID displayed as a badge on the process node.
 
 The detection rules cover 12 ATT&CK tactic categories: Execution, Defense Evasion/LOLBins, C2/RATs, Persistence, Discovery/Recon, Credential Access, Lateral Movement, Impact/Ransomware, Collection/Staging, Exfiltration, Initial Access (web shells), and Browser Exploits. A safe process exclusion list (`SAFE_PROCS`) prevents false positives on legitimate Windows processes that run from temp/AppData paths.
 
@@ -192,7 +192,7 @@ Both copy operations include columns: Hostname, ParentProcessName, Provider, Eve
 
 ### EvtxECmd Provider Filtering
 
-When EvtxECmd data is detected, the Process Tree automatically filters by Sysmon and Security providers using the `Provider` column. This ensures only process creation events are included, excluding noise from other event sources that share the same Event IDs.
+When EvtxECmd data is detected, the Process Inspector automatically filters by Sysmon and Security providers using the `Provider` column. This ensures only process creation events are included, excluding noise from other event sources that share the same Event IDs.
 
 ## Footer
 
@@ -216,7 +216,7 @@ The header displays contextual information about the loaded data:
 ## Tips
 
 ::: tip Sysmon Configuration
-For best results, ensure Sysmon is configured to log Event ID 1 (Process Create) with command line logging enabled. The more data available, the richer the process tree.
+For best results, ensure Sysmon is configured to log Event ID 1 (Process Create) with command line logging enabled. The more data available, the richer the analysis.
 :::
 
 ::: tip Large Datasets
@@ -224,5 +224,5 @@ For datasets with thousands of processes, use the depth limit control to start w
 :::
 
 ::: tip Combine with Persistence Analyzer
-After identifying a suspicious persistence mechanism, use the Process Tree to trace what process installed it and what the persisted binary spawns on execution.
+After identifying a suspicious persistence mechanism, use the Process Inspector to trace what process installed it and what the persisted binary spawns on execution.
 :::
