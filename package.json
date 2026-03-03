@@ -12,6 +12,7 @@
     "dist": "npm run build:renderer && electron-builder --mac",
     "dist:dmg": "npm run build:renderer && electron-builder --mac dmg",
     "dist:universal": "npm run build:renderer && electron-builder --mac --universal",
+    "dist:win": "electron-builder --win --x64",
     "rebuild": "electron-rebuild -f -w better-sqlite3",
     "postinstall": "patch-package",
     "docs:dev": "vitepress dev docs",
@@ -21,6 +22,20 @@
   "build": {
     "appId": "com.dfir.irflow-timeline",
     "productName": "IRFlow Timeline",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
     "mac": {
       "category": "public.app-category.developer-tools",
       "icon": "assets/icon.icns",
@@ -98,6 +113,7 @@
     "patch-package": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "source-map": "^0.7.4",
     "vite": "^6.0.7",
     "vitepress": "^1.6.4",
     "wait-on": "^8.0.1"
